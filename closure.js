@@ -41,6 +41,7 @@ console.log(increment_2());
 // a function records the scope it was created in via the internal property [[Scope]].
 // Closures: Functions Stay Connected to Their Birth Scopes
 // Closure is when a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope.
+// Any inner function closes over outer function variables
 
 // pros
 // - you can use them to enforce privacy
@@ -79,5 +80,17 @@ function useState(initialValue) {
     _val = newVal;
   }
 
-  return [state, setState]; 
+  return [state, setState];
 }
+
+// another example
+
+function retirement(limit) {
+  var str = ' year untill retirement.';
+  return function (year) {
+    console.log(limit - (2019 - year));
+  };
+}
+
+var retirementEG = retirement(60);
+retirementEG(1993)
