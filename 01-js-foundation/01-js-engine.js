@@ -32,3 +32,22 @@
 // But things have evolved now we don't have interprters we also use compilers to optimize code
 // It actually depends on the implementation, you could have JavaScript engine 
 // that is based on interpeter or engine that is based compiler
+
+// compiler use multiple techiniques to optimize code include:
+// - inline caching
+// - hidden classes
+
+// Why not compile JavaScript? 
+// Most of the major implementations (v8, SpiderMonkey, etc) include what’s called a “just-in-time compiler”. 
+// These compile some (or all) of the script in order to achieve better performance.
+// The usual strategy is that it tries to identify the functions that are being executed frequently and compiles those. 
+/// Over a relatively short period of time, most of the performance-sensitive code 
+// ends up being run as if it were compiled code, rather than strictly interpreted.
+// As this just-in-time compiler technology improves, the lines between “compiled” and “interpreted” start to blur.
+
+// Why not use machine code from the beginning?
+// - This needs the compilation needs to be done on the server 
+// - and browsers needs to agree on an executable format to run JavaScript, back in the day it was not feasible to acheive that
+// - but luckily enough, we have a standrd web executable binary form, WebAssembly, what we didn't have in 1985
+
+
